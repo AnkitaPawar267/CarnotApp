@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+   <LinearLayout
+       android:id="@+id/main"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:orientation="horizontal"
+           android:weightSum="2"
+
+           >
+
+         <Button
+             android:id="@+id/villagewisebutton"
+             android:layout_weight="1"
+             android:layout_width="0dp"
+             android:text="Village"
+             android:textColor="@color/black"
+             android:background="@color/colorAccent"
+             android:layout_height="match_parent"/>
+
+           <Button
+               android:id="@+id/districtwisebutton"
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:text="District"
+               android:textColor="@color/black"
+               android:background="@color/grey"
+               android:layout_height="match_parent"/>
+
+
+
+       </LinearLayout>
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="@color/black"
+    ></View>
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="8dp"
+               android:textColor="@color/black"
+               android:textStyle="bold"
+               android:text="Filter"
+               >
+           </TextView>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_marginBottom="5dp"
+               >
+
+               <Button
+                   android:id="@+id/pricewisebutton"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:text="Price Wise"
+                   android:layout_margin="8dp"
+                   android:textColor="@color/black"
+                   android:background="@color/colorAccent"
+                   android:layout_height="match_parent"/>
+
+               <Button
+                   android:id="@+id/datewisebutton"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:layout_margin="8dp"
+                   android:text="Date Wise"
+                   android:textColor="@color/black"
+                   android:background="@color/grey"
+                   android:layout_height="match_parent"/>
+
+
+
+           </LinearLayout>
+
+
+
+
+
+           <EditText
+               android:hint="Enter Detail"
+               android:id="@+id/filtertext"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"></EditText>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="8dp"
+               android:textColor="@color/black"
+               android:textStyle="bold"
+               android:text="Current Daily Price of Various Commodities from Various Markets (Mandi)"
+               >
+           </TextView>
+
+           <ListView
+               android:id="@+id/mainlist"
+               android:scrollingCache="false"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+           </ListView>
+
+
+
+       </LinearLayout>
+
+   </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main"
+        app:layout_constraintRight_toRightOf="@+id/main"
+        app:layout_constraintBottom_toTopOf="@+id/main"
+        app:layout_constraintLeft_toLeftOf="@+id/main"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
